@@ -6,8 +6,8 @@ require_once (__DIR__.'/crest.php');
 <?php
 $placement = $_REQUEST['PLACEMENT'];
 $placementOptions = isset($_REQUEST['PLACEMENT_OPTIONS']) ? json_decode($_REQUEST['PLACEMENT_OPTIONS'], true) : array();
-$handler = ($_SERVER['SERVER_PORT'] === '443' ? 'https' : 'http').'://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
-
+// $handler = ($_SERVER['SERVER_PORT'] === '443' ? 'https' : 'http').'://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
+$handler = 'https://april-server.ru/event/base/placement.php';
 if(!is_array($placementOptions))
 {
 	$placementOptions = array();
@@ -65,10 +65,10 @@ if($placement === 'DEFAULT'):
 			add: function()
 			{
 				test.call('userfieldtype.add', {
-					USER_TYPE_ID: 'mytext',
+					USER_TYPE_ID: 'event_app',
 					HANDLER: '<?=$handler?>',
-					TITLE: 'REST text userfield',
-					DESCRIPTION: 'Small unit-test for userfield type'
+					TITLE: 'EVENTS',
+					DESCRIPTION: 'Звонки'
 				});
 			},
 
@@ -80,15 +80,15 @@ if($placement === 'DEFAULT'):
 			update: function()
 			{
 				test.call('userfieldtype.update', {
-					USER_TYPE_ID: 'mytext',
-					DESCRIPTION: 'Small unit-test for userfield type. ' + (new Date()).toString()
+					USER_TYPE_ID: 'event_app',
+					DESCRIPTION: 'Звонки. ' + (new Date()).toString()
 				});
 			},
 
 			del: function()
 			{
 				test.call('userfieldtype.delete', {
-					USER_TYPE_ID: 'mytext'
+					USER_TYPE_ID: 'event_app'
 				});
 			}
 		}
