@@ -65,7 +65,7 @@ if($placement === 'DEFAULT'):
 			add: function()
 			{
 				test.call('userfieldtype.add', {
-					USER_TYPE_ID: 'event_app',
+					USER_TYPE_ID: 'konstructor_app',
 					HANDLER: '<?=$handler?>',
 					TITLE: 'konstructor',
 					DESCRIPTION: 'konstructor'
