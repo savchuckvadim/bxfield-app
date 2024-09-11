@@ -7,7 +7,7 @@ require_once (__DIR__.'/crest.php');
 $placement = $_REQUEST['PLACEMENT'];
 $placementOptions = isset($_REQUEST['PLACEMENT_OPTIONS']) ? json_decode($_REQUEST['PLACEMENT_OPTIONS'], true) : array();
 // $handler = ($_SERVER['SERVER_PORT'] === '443' ? 'https' : 'http').'://'.$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
-$handler = 'https://april-server.ru/event/base/placement.php';
+$handler = 'https://april-server.ru/full/konstructor/base/placement.php';
 if(!is_array($placementOptions))
 {
 	$placementOptions = array();
@@ -67,8 +67,8 @@ if($placement === 'DEFAULT'):
 				test.call('userfieldtype.add', {
 					USER_TYPE_ID: 'event_app',
 					HANDLER: '<?=$handler?>',
-					TITLE: 'EVENTS',
-					DESCRIPTION: 'Звонки'
+					TITLE: 'konstructor',
+					DESCRIPTION: 'konstructor'
 				});
 			},
 
